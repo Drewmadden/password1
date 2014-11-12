@@ -45,7 +45,7 @@ public class Password1 extends JPanel implements ActionListener {
 
         if (Ok.equals(x)) {
             char[] passwordtyped = password.getPassword();
-            if (isPasswordCorrect(passwordtyped)) {
+            if (PasswordEntered(passwordtyped)) {
                 JOptionPane.showMessageDialog(Frame,
                     "Welcome you are logged in!");
             } else {
@@ -62,7 +62,7 @@ public class Password1 extends JPanel implements ActionListener {
             JOptionPane.showMessageDialog(Frame,"You should remember your password next time =[");
         }
     }
-    private static boolean isPasswordCorrect(char[] passwordtyped) {
+    private static boolean PasswordEntered(char[] passwordtyped) {
         boolean a = true;
         char[] bugaboo = { 'b', 'u', 'g', 'a', 'b', 'o', 'o' };
         if (passwordtyped.length != bugaboo.length) {
@@ -77,7 +77,7 @@ public class Password1 extends JPanel implements ActionListener {
     protected void resetFocus() {
         password.requestFocusInWindow();
     }
-    private static void createAndShowGUI() {
+    private static void GUI() {
         JFrame frame = new JFrame("LOGIN");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         final Password1 newContentPane = new Password1(frame);
@@ -99,7 +99,7 @@ public class Password1 extends JPanel implements ActionListener {
             public void run() {
 
 		UIManager.put("swing.boldMetal", Boolean.FALSE);
-		createAndShowGUI();
+		GUI();
             }
         });
     }
